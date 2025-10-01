@@ -85,8 +85,25 @@ pip install tritonclient[http] numpy opencv-python
 
 Execute the client:
 
+- Using http client
 ```bash
-python client.py
+python http_client.py --url 192.168.1.1:8000 --image ./input.jpg
+
+
+# Invoking model 'yolov8n_ensemble' using HTTP...
+# Detected 1 objects.
+# First detection: Label='person' (ID=0), Conf=0.84
+# Result image saved to output_detection.jpg
+```
+
+- Using grpc client
+```bash
+python grpc_client.py --url 192.168.1.1:9000 --image ./input.jpg
+
+# Invoking model 'yolov8n_ensemble' using gRPC...
+# Detected 1 objects.
+# First detection: Label='person' (ID=0), Conf=0.84
+# Result image saved to output_detection.jpg
 ```
 
 ### 2. Output Format
